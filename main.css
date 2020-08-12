@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    align-items: center;
+    background-color: rgb(223, 223, 219);
+    flex-direction: column;
+}
+
+canvas {
+    background: black;
+    border:2px solid white;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+}
+
+.painel {
+    margin-top: 10px;
+    font-size: 3.6rem;
+}
