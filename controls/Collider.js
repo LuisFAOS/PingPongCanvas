@@ -20,10 +20,10 @@ function Collider(){
             
         },
         Collide: function(player, boll) {
-            const collideY=player.y <= boll.y && player.heightY >= boll.y
+            const collideY=player.y <= boll.y+7 && player.heightY >= boll.y-11
             if (player.id==="white" && (player.x >= boll.x && player.widthX <= boll.x) && (collideY)) {
                 return true
-            }else if(player.id==="gray" && (player.x >= boll.x+7 && player.widthX <= boll.x+7) && (collideY)){
+            }else if(player.id==="gray" && (player.x >= boll.x+10 && player.widthX <= boll.x+10) && (collideY)){
                 return true
             }
               

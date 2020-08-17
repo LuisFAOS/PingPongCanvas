@@ -6,6 +6,10 @@
     <title>Ping Pong</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+      sessionStorage.setItem('Player 1',0)
+      sessionStorage.setItem('Player 2',0)
+    </script>
     <script src='controls/Collider.js'></script>
     <script src='controls/keyboard.js'></script>
     <script src='elements/player.js'></script>
@@ -17,7 +21,12 @@
   <body>
     <canvas id="canvas_animacao" width="500" height="250"></canvas>
     
-    <div class="painel">0/0</div>
+    <div class="painel">
+      [<span class='Player1'>0</span>
+      /
+      <span class='Player2'>0</span>]
+      <button onClick='RunGame()'>PLAY AGAIN!!</button>
+    </div>
   </body>
   <script src='RunGame.js'></script>
 </html>

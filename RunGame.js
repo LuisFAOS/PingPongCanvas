@@ -1,4 +1,5 @@
 function RunGame() {
+    document.querySelector('button').style.display='none'
     const canvas = document.getElementById('canvas_animacao')
     const context= canvas.getContext('2d');
 
@@ -11,7 +12,6 @@ function RunGame() {
     const player2 = new Player(context,keyboard,0)
 
     player2.x = 495 - player2.width
-    player2.y = 0
     player2.color = 'gray'
 
     const collider = new Collider()

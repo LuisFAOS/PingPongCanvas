@@ -2,18 +2,18 @@ function Player(context, keyboard,keyIndex) {
     return {
         context,
         x:5,
-        y:20,
+        y:125,
         speedX:0,
         color:'white',
         height:50,
-        width:5,
+        width:4,
         update:function() {
             const CanvasHeight=this.context.canvas.height
             if(keyboard.pressed(UP_ARROW[keyIndex]) && this.y > 0){
-                this.y-=4
+                this.y-=3
             }
             if(keyboard.pressed(DOWN_ARROW[keyIndex]) && this.y < CanvasHeight - this.height){
-                this.y+=4
+                this.y+=3
             }
         }, 
         draw: function(){

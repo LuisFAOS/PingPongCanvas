@@ -1,13 +1,17 @@
 function Boll(context) {
 
+    const Xpossibilities= [-3,3]
+    const Ypossibilities= [-4,4]
+
     return {
         context,
         x:250,
         y:125,
-        speedX:3,
-        speedY:4,
+        speedX:Xpossibilities[Math.round(Math.random()*1)],
+        speedY:Ypossibilities[Math.round(Math.random()*1)],
         color:'yellow',
         radius:5,
+        rounds:0,
         update: function(doCrash) {
                 const ctx = this.context
                 const endGameP1=this.x < this.radius
@@ -15,9 +19,10 @@ function Boll(context) {
                 if(doCrash){
                     this.speedX*=-1
                 }
-                else if(this.y < this.radius || this.y > ctx.canvas.height - this.radius){
-                    this.speedY*=-1
-                }else if (endGameP2 || endGameP1) {
+                if(this.y < this.radius || this.y > ctx.canvas.height - this.radius){
+                    this.rounds++
+                    this.speedY*= -1
+                }if (endGameP2 || endGameP1) {
                     return endGameP1 ? "Player 2" : "Player 1"
                 }
                 this.x +=this.speedX
@@ -33,8 +38,8 @@ function Boll(context) {
         },
         CollisionHandler: function() {
             return{
-                x: this.x - this.radius, // this.x é o centro da bola
-                y: this.y, // this.y idem
+                x: this.x - this.radius,
+                y: this.y,
                 width: this.radius * 2,
                 height: this.radius * 2
             }

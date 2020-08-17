@@ -6,6 +6,8 @@ body {
 }
 
 canvas {
+    width:500px;
+    height: 250px;
     background: black;
     border:2px solid white;
     image-rendering: pixelated;
@@ -16,4 +18,8 @@ canvas {
 .painel {
     margin-top: 10px;
     font-size: 3.6rem;
+}
+
+button {
+    margin:20px auto;
 }
